@@ -1,25 +1,23 @@
 angular.module('moviesApp')
         .controller('MoviesIndexController', MoviesIndexController);
 
-MoviesIndexController.$inject=[];
-function MoviesIndexController() {
-  //loop through array
-  //grab movie id
-  //make http called
-  //append results to index page
-
+MoviesIndexController.$inject=['$routeParams', '$location', 'MovieService'];
+function MoviesIndexController($routeParams, $location, MovieService) {
   console.log('index controller called');
   var vm = this;
-  vm.movies = [{title: 'Clue'}, {title: 'Frozen'}, {title: 'Amelie'}];
-  angular.forEach(vm.movies, function(value, key) {
-    console.log('each movie', value, key);
-  });
+  vm.movies = [{title: 'Clue'}, {title: 'Frozen'}, {title: 'The Hunger Games'}];
+  angular.forEach(vm.movies, function(key, value) {
+    console.log('each movie', key, value);
+    var movieId = key.title;
+    getMovie(movieId);
 
-  function getMovie(id) {
-    console.log('movie service called');
-    // MovieService.get(id).then(fuction(data){
-    //   vm.movie = data;
-    // });
-  }
+    function getMovie(movieId) {
+      console.log('movie service called', movieId);
+      MovieService.get(movieId).then(function(data){
+        console.log('here is the movie data ', data);
+        vm.movie = data;
+      });
+    }
+  });
   console.log('index controller exit, query get');
 }
