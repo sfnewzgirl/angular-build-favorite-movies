@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="moviesApp">
   <head>
-    <meta charset="utf-8" ng-app="moviesApp">
+    <meta charset="utf-8">
     <title>My Favorite Movies App!</title>
     <base href="/"></base>
 
@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="/public/styles/styles.css">
 
     <!-- ANGULAR -->
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
     <script src="/public/scripts/app.js"></script>
-    <script src="/public/scripts/controllers/MoviesIndexController.js"></script>
-    <script src="/public/scripts/controllers/MoviesShowController.js"></script>
+    <!-- <script src="/public/scripts/controllers/MoviesIndexController.js"></script>
+    <script src="/public/scripts/controllers/MoviesShowController.js"></script> -->
 
   </head>
   <body>
@@ -26,6 +26,6 @@
     </div>
       Angular Sanity Check:
       Lets see a 4 here: {{2*2}}
-    <div ng-view></div>
+    <!-- <div ng-view></div> -->
   </body>
 </html>
