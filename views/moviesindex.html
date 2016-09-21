@@ -1,16 +1,19 @@
 <div class="container">
   <div class="mdl-grid">
-    <!-- <div class="mdl-cell mdl-cell--4-col">Content</div>
-    <div class="mdl-cell mdl-cell--4-col">goes</div>
-    <div class="mdl-cell mdl-cell--4-col">here</div> -->
-  <h4>sanity check, movies index view is linked</h4>
-    <div ng-repeat="movie in moviesIndexCtrl.movies" class="row">
-      <ul class="movies-list">
-        <li class="one-movie">
-          <span>{{movie}}</span>
-          <!-- <movie-info film="movie"></movie-info> -->
-      </li>
-      </ul>
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-cell--8-col-phone">
+      <!-- <h4>sanity check, movies index view is linked</h4> -->
+        <div ng-repeat="movie in moviesIndexCtrl.movies">
+          <ul class="movies-list">
+            <li class="one-movie">
+              <h2>{{movie.title}} (<span class="movie-year">{{movie.year}}</span>) <span class=movie-rating>{{movie.rated}}</span></h2>
+              <hr>
+              <h4>Director: <span class="movie-director">{{movie.director}}</span></h4>
+              <h4>Notable Actors: </h4>
+              <p>{{movie.actors}}</p>
+              <p>{{movie.plot}}</p>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
