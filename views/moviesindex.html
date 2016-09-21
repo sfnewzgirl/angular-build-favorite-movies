@@ -1,5 +1,11 @@
-<div class="movies-list">
+<div class="container">
   <h4>sanity check, movies index view is linked</h4>
-  <h4>http://www.omdbapi.com/?t=Clue&y=&plot=full&r=json</h4>
-  <movie-info film="12 Years A Slave"></movie-info>
+    <div ng-repeat="movie in moviesIndexCtrl.movies" class="row">
+      <ul class="movies-list">
+        <li class="one-movie">
+          <span>{{movie}}</span>
+          <!-- <movie-info film="movie"></movie-info> -->
+      </li>
+      </ul>
+    </div>
 </div>

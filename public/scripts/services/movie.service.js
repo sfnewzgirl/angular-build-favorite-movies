@@ -12,43 +12,30 @@ function MovieService($http, $q) {
   self.update = update; //update a movie, is this the like/dislike?
   self.remove = remove; //delete a movie, probably won't use
 }
-  //call to show all the movies
-  fucntion
+  //call to show one movie
+  function get(id) {
+    console.log('one movie request', id);
+    //create a deferred
+    var deferred = $q.defer();
 
-
-
-  function query() {
-    console.log('someone requested all the books');
-    // create a new 'deferred'
-    var def = $q.defer();
-    // fire off the request
     $http({
       method: 'GET',
-      url: 'https://super-crud.herokuapp.com/books'
-    }).then(onBooksIndexSuccess, onError);
+      url: 'http://www.omdbapi.com/?t=' + id + '&plot=full&r=json'
+    }).then(oneMovieSuccess, onError);
 
-    // we return the promise here - whenever it's complete any other .then's you attach will get run too
-    return def.promise;
+    //return promise
+    return deferred.promise;
 
-    // note how these functions are defined within the body of another function?
-    // that gives them access to variables from that function
-    // - see lexical scope & closures https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
-    function onBooksIndexSuccess(response){
-      console.log('here\'s the get all books response data from the service', response.data);
-      self.books = response.data.books;
-      // ok, we got data, resolve the deferred - at this point we get to choose what we send on to the controller
-      def.resolve(self.books);
+    //resolve
+    function oneMovieSuccess(response) {
+      console.log('one movie came back', response);
+      self.movie = response.data;
+      deferred.resolve(self.movie);
     }
-    function onError(error){
-      console.log('there was an error: ', error);
-      self.books.error = {error: error};
-      // oh noes!  error - reject the deferred - at this point we get to choose what we send on to the controller
-      def.reject(self.books.error);
+    //reject
+    function onError(response) {
+      console.log('something went wrong with one movie', response);
+      self.movie = {error: error};
+      deferred.reject(self.movie);
     }
   }
-
-
-
-
-
-}
