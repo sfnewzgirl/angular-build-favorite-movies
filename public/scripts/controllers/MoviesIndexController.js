@@ -1,25 +1,17 @@
 angular.module('moviesApp')
         .controller('MoviesIndexController', MoviesIndexController);
 
-// MoviesIndexController.$injext=[''];
-// function MoviesIndexController() {
-//   var vm = this;
-// }
-//
-// BooksIndexController.$inject=['BookService'];
-// function BooksIndexController( BookService) {
-//   var vm = this;
-//   // exports
-//   vm.books = [];
-//
-//   // initialize data
-//   getBooks();
-//
-//   // implementations
-//   function getBooks() {
-//     BookService.query().then(function(data){
-//       console.log('here\'s the books data in the controller', data);
-//       vm.books = data;
-//     });
-//   }
-// }
+MoviesIndexController.$inject=['MovieService'];
+function MoviesIndexController(MovieService) {
+  console.log('index controller called');
+  var vm = this;
+  vm.movies = [];
+  getMovies();
+
+  function getMovies() {
+    MovieService.query().then(fuction(data){
+      vm.movies = data;
+    });
+  }
+  console.log('index controller exit, query get');
+}

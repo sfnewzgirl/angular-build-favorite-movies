@@ -4,23 +4,24 @@ angular.module('moviesApp', ['ngRoute'])
 
 config.$inject = ['$routeProvider', '$locationProvider'];
 function config ( $routeProvider, $locationProvider) {
+  console.log('enter routeProvider');
   $routeProvider
     .when('/', {
       templateUrl: 'views/moviesindex.html',
       controller: 'MoviesIndexController',
       controllerAs: 'moviesIndexCtrl'
     })
+    .when('/movies/:id', {
+      templateUrl: 'views/movieshow.html',
+      controller: 'MovieShowController',
+      controllerAs: 'movieShowCtrl'
+    })
+
+
+  console.log('exit routeProvider');
 }
 
 
-//
-// function config (  $routeProvider,   $locationProvider  )  {
-//   $routeProvider
-//     .when('/', {
-//       templateUrl: 'templates/books/index.html',
-//       controller: 'BooksIndexController',
-//       controllerAs: 'booksIndexCtrl'
-//     })
 //     .when('/books/:id', {
 //       templateUrl: 'templates/books/show.html',
 //       controller: 'BooksShowController',
