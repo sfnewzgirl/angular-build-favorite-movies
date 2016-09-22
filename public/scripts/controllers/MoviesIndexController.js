@@ -19,5 +19,14 @@ function MoviesIndexController(MovieService) {
       });
     }
   });
-  console.log('index controller exit, query get');
+
+  vm.voteUp = function() {
+    console.log('vote up button clicked');
+  }
+
+  vm.voteDown = function() {
+    console.log('vote down button clicked');
+  }
+
+console.log('index controller exit, query get');
 }
