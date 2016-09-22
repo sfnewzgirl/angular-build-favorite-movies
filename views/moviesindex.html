@@ -11,11 +11,9 @@
               <h4>Notable Actors: </h4>
               <p>{{movie.Actors}}</p>
               <p>{{movie.Plot}}</p>
-                <div class="movie-voting">
-                  <h4>Do you agree?</h4>
-                  <button ng-click="moviesIndexCtrl.voteUp(moviesIndexCtrl.movie)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Vote Up</button>
-                  <button ng-click="moviesIndexCtrl.voteDown(moviesIndexCtrl.movie)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Vote Down</button>
-                </div>
+              <h4>Do you agree?</h4>
+              <button ng-click="moviesIndexCtrl.voteUp(movie)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Vote Up</button>
+              <button ng-click="moviesIndexCtrl.voteDown(movie)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Vote Down</button>
           </li>
         </ul>
       </div>

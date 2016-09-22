@@ -7,6 +7,7 @@ function MoviesIndexController(MovieService) {
   var vm = this;
   vm.movies= [];
   var movieTitles = [{title: 'The Godfather'}, {title: 'Legends of the Fall'}, {title: 'Wedding Crashers'}, {title: 'August: Osage County'}, {title: 'The Hunger Games'}, {title: 'Clue'}];
+
   angular.forEach(movieTitles, function(key, value) {
     console.log('each movie', key, value);
     var movieId = key.title;
@@ -19,14 +20,14 @@ function MoviesIndexController(MovieService) {
         vm.movies.push(data);
       });
     }
-
-    vm.voteUp = function(movieId) {
-      console.log('vote up button clicked', movieId);
-    }
-
-    vm.voteDown = function(movieId) {
-      console.log('vote down button clicked', movieId);
-    }
   });
+
+  vm.voteUp = function(movie) {
+    console.log('vote up button clicked', movie);
+  }
+
+  vm.voteDown = function(movie) {
+    console.log('vote down button clicked', movie);
+  }
 console.log('index controller exit, query get');
 }
