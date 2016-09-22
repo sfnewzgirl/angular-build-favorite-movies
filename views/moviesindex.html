@@ -12,9 +12,9 @@
               <p>{{movie.Actors}}</p>
               <p>{{movie.Plot}}</p>
               <h4>Do you agree?</h4>
-              <p>{{movie.upVotes}} UpVotes</p>
+              <!-- <p>{{movie.upVotes}} UpVotes</p> -->
               <button ng-model="upVotes" ng-click="moviesIndexCtrl.voteUp(movie)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Vote Up</button>
-              <p>{{downVotes}} downVotes</p>
+              <!-- <p>{{downVotes}} downVotes</p> -->
               <button ng-model="downVotes" ng-click="moviesIndexCtrl.voteDown(movie)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Vote Down</button>
           </li>
         </ul>
