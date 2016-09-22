@@ -1,0 +1,25 @@
+{
+  "name": "angular-build-favorite-movies",
+  "version": "1.0.0",
+  "description": "Misha LeClair Screenshot here ![alt text](public/images/disneyland-app-screenshot.png)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfnewzgirl/angular-build-favorite-movies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sfnewzgirl/angular-build-favorite-movies/issues"
+  },
+  "homepage": "https://github.com/sfnewzgirl/angular-build-favorite-movies#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "material-design-lite": "file:mdl"
+  }
+}
