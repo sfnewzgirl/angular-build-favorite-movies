@@ -6,11 +6,7 @@ function MovieService($http, $q) {
   console.log('entered movieservice');
   var self = this;
   self.movie = {}; //one movie object
-  // self.movies = []; //array of all movie objects
-  // self.query = query; //get all the movies
   self.get = get; //get one movie
-  // self.update = update; //update a movie, is this the like/dislike?
-  // self.remove = remove; //delete a movie, probably won't use
 
   //call to show one movie
   function get(id) {

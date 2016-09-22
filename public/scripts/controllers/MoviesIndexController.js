@@ -23,17 +23,11 @@ function MoviesIndexController(MovieService) {
       });
     }
   });
-
-  // vm.update = function(movie) {
-  //   vm.upVotes = angular.copy(movie);
-  // };
-
   vm.voteUp = function(movie) {
     console.log('vote up button clicked', movie);
     vm.upVotes = upVotes ++;
     console.log(upVotes);
   }
-
   vm.voteDown = function(movie) {
     console.log('vote down button clicked', movie);
     vm.downVotes = downVotes ++;
