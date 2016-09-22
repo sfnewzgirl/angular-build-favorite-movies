@@ -5,18 +5,17 @@
         <div ng-repeat="movie in moviesIndexCtrl.movies">
           <ul class="movies-list">
             <li class="one-movie">
-              {{moviesTitles.title}}
-              <h2>{{movie.title}} (<span class="movie-year">{{movie.year}}</span>) <span class=movie-rating>{{movie.rated}}</span></h2>
+              <h2>{{movie.Title}} (<span class="movie-year">{{movie.Year}}</span>) <span class=movie-rating>{{movie.Rated}}</span></h2>
               <hr>
-              <h4>Director: <span class="movie-director">{{movie.director}}</span></h4>
+              <h4>Director: <span class="movie-director">{{movie.Director}}</span></h4>
               <h4>Notable Actors: </h4>
-              <p>{{movie.actors}}</p>
-              <p>{{movie.plot}}</p>
+              <p>{{movie.Actors}}</p>
+              <p>{{movie.Plot}}</p>
                 <div class="movie-voting">
                   <h4>Do you agree?</h4>
                   <button ng-click="movieVoteCtrl.voteUp(movieVoteCtrl.movie)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Vote Up</button>
                   <button ng-click="movieVoteCtrl.voteDown(movieVoteCtrl.movie)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Vote Down</button>
-                </movie-vote>
+                </div>
           </li>
         </ul>
       </div>
