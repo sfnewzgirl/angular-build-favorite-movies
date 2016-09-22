@@ -1,8 +1,15 @@
 material.red-amber.min.css
 
+.content-grid {
+  max-width: 1080px;
+}
 /*material design
 You can set a maximum grid width, after which the grid stays centered
 with padding on either side, by setting its max-width CSS property.*/
 
-/*container div for jumbotron
-container div for content section*/
+.hero-transparent {
+  background: url('../images/camera_film_small.jpeg') center / cover;
+}
+.app-title {
+  font-size: 3em;
+}
