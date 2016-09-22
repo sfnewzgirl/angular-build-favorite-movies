@@ -17,6 +17,7 @@ function MoviesIndexController(MovieService) {
         console.log('here is the movie data ', data);
         vm.movie = data;
       });
+      return vm.movie;
     }
   });
 
