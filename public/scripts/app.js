@@ -1,13 +1,6 @@
 console.log('sanity check, app.js linked');
-
-// angular.module('moviesApp', []);
-//
-
 angular.module('moviesApp', ['ngRoute'])
         .config(config);
-        // .controller('MoviesIndexController', function() {
-        //   console.log('controller');
-        // });
 
 config.$inject = ['$routeProvider', '$locationProvider'];
 function config ( $routeProvider, $locationProvider) {
@@ -32,6 +25,4 @@ function config ( $routeProvider, $locationProvider) {
 //       controllerAs: 'movieShowCtrl'
 //     })
 //
-//
-//   console.log('exit routeProvider');
 // }

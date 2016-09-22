@@ -3,7 +3,6 @@ angular.module('moviesApp')
 
 MoviesIndexController.$inject=['MovieService'];
 function MoviesIndexController(MovieService) {
-  //i tried adding $http as a dependency
   console.log('index controller called');
   var vm = this;
   vm.movies = [{title: 'Clue'}, {title: 'Frozen'}, {title: 'The Hunger Games'}];
@@ -11,7 +10,6 @@ function MoviesIndexController(MovieService) {
     console.log('each movie', key, value);
     var movieId = key.title;
     getMovie(movieId);
-    //i tried $scope, movieId too
 
     function getMovie(movieId) {
       console.log('get movie called', movieId);
