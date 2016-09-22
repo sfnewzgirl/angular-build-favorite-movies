@@ -19,10 +19,3 @@ function config ( $routeProvider, $locationProvider) {
     });
     console.log('exit routeProvider');
 }
-    // .when('/movies/:id', {
-//       templateUrl: 'views/movieshow.html',
-//       controller: 'MovieShowController',
-//       controllerAs: 'movieShowCtrl'
-//     })
-//
-// }

@@ -30,6 +30,8 @@ function MovieService($http, $q) {
     function oneMovieSuccess(response) {
       console.log('one movie came back', response);
       self.movie = response.data;
+      //get data from db
+      //function to add to movie data
       deferred.resolve(self.movie);
     }
     //reject
