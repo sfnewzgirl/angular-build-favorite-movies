@@ -20,23 +20,53 @@ app.use(express.static('public'));
 
 //HOMEPAGE
 app.get('/', function homepage(req, res) {
-  res.sendFile(__dirname + '/api');
+  res.sendFile(__dirname + '/index.html');
 });
 
-//UPDATE A VOTEUP OR DOWN
-// app.put('/api/protips/:id', function (req, res) {
-//   db.ProTip.findOne({_id: req.params.id}, function(err, selectedProTip) {
-//       if (req.body.voteStatus == 'up') {
-//         selectedProTip.tipScore = selectedProTip.tipScore + 1;
-//       } else if (req.body.voteStatus == 'down') {
-//         selectedProTip.tipScore = selectedProTip.tipScore - 1;
-//       };
-//     selectedProTip.save(function (err, updatedTipScore) {
-//       if (err) {return console.log("put error: " + err);}
-//       res.json(updatedTipScore);
-//     });
-//   });
-// });
+//LIST ALL MOVIES
+app.get('/api/movies', function (req, res) {
+  db.Movie.find(function (err, movies){
+    if (err) {return console.log("get error: " + err);}
+    res.json(movies);
+  });
+});
+
+//UPDATE VOTE SCORE
+app.put('/api/movies/:id', function (req, res) {
+  db.Movie.findOne({_id: req.params.id}, function(err, selectedMovie) {
+    if (req.body.upVotes) {
+      selectedMovie.tipScore = selectedProTip.tipScore + 1;
+    }
+    req.body.upVotes
+    req.body.downVotes
+
+      if (req.body.voteStatus == 'up') {
+        selectedProTip.tipScore = selectedProTip.tipScore + 1;
+      } else if (req.body.voteStatus == 'down') {
+        selectedProTip.tipScore = selectedProTip.tipScore - 1;
+      };
+    selectedProTip.save(function (err, updatedTipScore) {
+      if (err) {return console.log("put error: " + err);}
+      res.json(updatedTipScore);
+    });
+  });
+});
+
+
+app.post('/api/protips/:proTipId/comments', function (req, res) {
+   db.ProTip.findById(req.params.proTipId, function (err, selectedProTip) {
+     var newComment = new db.Comment({commentBody: req.body.commentBody});
+     selectedProTip.tipComment.push(newComment);
+     selectedProTip.save(function(err, savedComment) {
+       if (err) {return console.log("post error: " + err);
+         } else {
+           res.json(newComment);
+         }
+     });
+   });
+});
+
+
 
 
 JSON ENDPOINTS
@@ -48,7 +78,7 @@ app.get('/api', function api_index(req, res) {
     baseUrl: "https://angular-build-movies.herokuapp.com/",
     endpoints: [
       {method: "GET", path: "/api", description: "Homepage"},
-      {method: "POST", path: "/api/movies/", description: "creates on movie"}
+      {method: "PUT", path: "/api/movies/:id", description: "creates on movie"}
     ]
   })
 });
