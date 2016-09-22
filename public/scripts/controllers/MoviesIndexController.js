@@ -19,15 +19,14 @@ function MoviesIndexController(MovieService) {
         vm.movies.push(data);
       });
     }
+
+    vm.voteUp = function(movieId) {
+      console.log('vote up button clicked', movieId);
+    }
+
+    vm.voteDown = function(movieId) {
+      console.log('vote down button clicked', movieId);
+    }
   });
-
-  // vm.voteUp = function(movieId) {
-  //   console.log('vote up button clicked', movieId);
-  // }
-  //
-  // vm.voteDown = function(movieId) {
-  //   console.log('vote down button clicked', movieId);
-  // }
-
 console.log('index controller exit, query get');
 }
