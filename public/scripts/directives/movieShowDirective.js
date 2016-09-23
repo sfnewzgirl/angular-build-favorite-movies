@@ -3,7 +3,7 @@ angular.module('moviesApp')
 
 function movieSearch(){
   var directive = {
-    restrict: 'E',
+    restrict: 'C',
     scope: {
       title: '@'
     },
