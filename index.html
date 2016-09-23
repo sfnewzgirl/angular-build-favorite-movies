@@ -28,12 +28,12 @@
       <h1>Movie App</h1>
     </div>
     <form>
-      <div class="form-group col-md-4 offset-md-4">
+      <div class="form-group col-md-4 offset-md-4 movie-search-form-area">
         <input type="text" ng-model="searchMovieCtrl.movie.title" class="form-control" placeholder="Search for a Movie Title">
         <button type="button" ng-click="searchMovieCtrl.getMovie(title)" class="btn btn-default">Search</button>
       </div>
+        <movie-search></movie-search>
     </form>
-    <movie-search></movie-search>
     <h2>Our List of Featured Films</h2>
     <div ng-view></div>
   </body>

@@ -19,7 +19,8 @@ ul {
   background-color: #1d689b;
   color: #ffffff;
 }
-.selected-buttong {
-  background-color: #020142;
-  colore: #ffffff;
+.movie-search-form-area {
+  background-color: #e9e6ab;
+  padding: 1em;
+  margin-left: .2em;
 }

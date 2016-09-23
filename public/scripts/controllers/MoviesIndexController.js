@@ -8,7 +8,7 @@ function MoviesIndexController(MovieService) {
   vm.movies= [];
   var upVotes= 1;
   var downVotes= 5;
-  var movieTitles = [{title: 'The Godfather'}, {title: 'Legends of the Fall'}, {title: 'Wedding Crashers'}, {title: 'August: Osage County'}, {title: 'The Hunger Games'}, {title: 'Clue'}];
+  var movieTitles = [{title: 'The Godfather'}, {title: 'Legends of the Fall'}, {title: 'August: Osage County'}, {title: 'The Hunger Games'}, {title: 'Clue'}];
 
   angular.forEach(movieTitles, function(key, value) {
     console.log('each movie', key, value);
