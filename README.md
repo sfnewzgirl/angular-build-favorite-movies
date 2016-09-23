@@ -2,6 +2,8 @@
 ## Angular Build Project
 Misha LeClair
 
+![alt text](public/images/movie_app_screenshot.png)
+
 ## Objectives
 * Build an app with Angular
 
@@ -32,15 +34,60 @@ GitHub Repository: https://github.com/sfnewzgirl/angular-build-favorite-movies
 
 ## Code Examples
 
-text here
+This was my first time using an Angular service or promise.
 
 ```
+angular.module('moviesApp')
+        .service('MovieService', MovieService);
+
+MovieService.$inject = ['$http', '$q'];
+function MovieService($http, $q) {
+  console.log('entered movieservice');
+  var self = this;
+  self.movie = {}; //one movie object
+  self.get = get; //get one movie
+
+  //call to show one movie
+  function get(id) {
+    console.log('one movie request', id);
+    //create a deferred
+    var deferred = $q.defer();
+
+    $http({
+      method: 'GET',
+      url: 'http://www.omdbapi.com/?t=' + id + '&plot=short&r=json'
+    }).then(oneMovieSuccess, onError);
+
+    //return promise
+    return deferred.promise;
+
+    //resolve
+    function oneMovieSuccess(response) {
+      console.log('one movie came back', response);
+      self.movie = response.data;
+      //get data from db
+      //function to add to movie data
+      deferred.resolve(self.movie);
+    }
+    //reject
+    function onError(response) {
+      console.log('something went wrong with one movie', response);
+      self.movie = {error: error};
+      deferred.reject(self.movie);
+    }
+  }
+}
 
 ```
-text here
+A user can click on the vote up or vote down button and see a corresponding arrow appear to confirm their vote.
 
 ```
-
+<h4>Do you agree?</h4>
+<button ng-model="upVotes" ng-click="upVote = true; downVote = !true" class="btn btn-default">Vote Up</button>
+<button ng-model="downVotes" ng-click="downVote = true; upVote = !true" class="btn btn-default">Vote Down</button>
+<button ng-show="upVote" class="btn btn-default glyphicon glyphicon-upload"></button>
+<button ng-show="downVote" class="btn btn-default glyphicon glyphicon-download"></button>
 ```
 
-## Wireframes
+## Future Ideas
+* Build a server side API to serve up a persistent vote count for up and down votes.
