@@ -12,8 +12,8 @@
               <p>{{movie.Actors}}</p>
               <p>{{movie.Plot}}</p>
               <h4>Do you agree?</h4>
-              <button ng-model="upVotes" ng-click="upVote = true" class="btn btn-default">Vote Up</button>
-              <button ng-model="downVotes" ng-click="downVote = true" class="btn btn-default">Vote Down</button>
+              <button ng-model="upVotes" ng-click="upVote = true; downVote = !true" class="btn btn-default">Vote Up</button>
+              <button ng-model="downVotes" ng-click="downVote = true; upVote = !true" class="btn btn-default">Vote Down</button>
               <button ng-show="upVote" class="btn btn-default glyphicon glyphicon-upload"></button>
               <button ng-show="downVote" class="btn btn-default glyphicon glyphicon-download"></button>
           </li>
