@@ -16,7 +16,7 @@ function MovieService($http, $q) {
 
     $http({
       method: 'GET',
-      url: 'http://www.omdbapi.com/?t=' + id + '&plot=full&r=json'
+      url: 'http://www.omdbapi.com/?t=' + id + '&plot=short&r=json'
     }).then(oneMovieSuccess, onError);
 
     //return promise
