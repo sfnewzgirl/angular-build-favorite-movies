@@ -1,0 +1,23 @@
+.jumbotron {
+    background-image: url(../images/camera_film_small.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: right;
+    padding-right: 1em;
+    color: #e9e6ab;
+    font-size: 8em;
+    text-shadow: black 0.1em 0.1em 0.1em;
+}
+h2, h3 {
+  color: #020142;
+}
+ul {
+  list-style: none;
+}
+.movie-headline {
+
+}
+.btn-default {
+  background-color: #1d689b;
+  color: #ffffff;
+}
