@@ -1,18 +1,18 @@
 <div class="container movie-search">
   <div class="row">
-    <!-- <form>
+    <form>
       <div class="form-group col-md-4 offset-md-4">
-        <input type="text" class="form-control" placeholder="Search for a Movie Title">
-        <button type="submit" ng-hide="submit" class="btn btn-default">Search</button>
-      </div> -->
-      <div class="col-md-12">
-        <h3>{{searchMovieCtrl.movie.Title}} (<span class="movie-year">{{searchMovieCtrl.movie.Year}}</span>) <span class=movie-rating>{{searchMovieCtrl.movie.Rated}}</span></h3>
+        <input type="text" ng-model="searchMovieCtrl.movieName" class="form-control" placeholder="Search for a Movie Title">
+        <button type="submit" ng-click="searchMovieCtrl.getMovie()" class="btn btn-default">Search</button>
       </div>
-        <hr>
-        <h4>Director: <span class="movie-director">{{searchMovieCtrl.movie.Director}}</span></h4>
-        <h4>Notable Actors: </h4>
-        <p>{{searchMovieCtrl.movie.Actors}}</p>
-        <p>{{searchMovieCtrl.movie.Plot}}</p>
-    <!-- </form> -->
+    </form>
+    <div class="col-md-12">
+      <h3>{{searchMovieCtrl.movie.Title}} (<span class="movie-year">{{searchMovieCtrl.movie.Year}}</span>) <span class=movie-rating>{{searchMovieCtrl.movie.Rated}}</span></h3>
+    </div>
+      <hr>
+      <h4>Director: <span class="movie-director">{{searchMovieCtrl.movie.Director}}</span></h4>
+      <h4>Notable Actors: </h4>
+      <p>{{searchMovieCtrl.movie.Actors}}</p>
+      <p>{{searchMovieCtrl.movie.Plot}}</p>
   </div>
 </div>

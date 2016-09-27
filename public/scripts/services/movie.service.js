@@ -38,27 +38,3 @@ function MovieService($http, $q) {
     }
   }
 }
-
-
-
-// function upVote (event) {
-//   $.ajax({
-//    method: 'PUT',
-//    url: '/api/protips/'+$(this).attr('data-id'),
-//    dataType: 'json',
-//    data: {voteStatus: 'up'},
-//    success: onSuccessVote,
-//    error: error
-//  });
-// }
-//
-// function downVote (event) {
-//   $.ajax({
-//     method: 'PUT',
-//     url: '/api/protips/'+$(this).attr('data-id'),
-//     dataType: 'json',
-//     data: {voteStatus: 'down'},
-//     success: onSuccessVote,
-//     error: error
-//   });
-// }

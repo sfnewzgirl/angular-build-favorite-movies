@@ -3,9 +3,9 @@ angular.module('moviesApp')
 
 function movieSearch(){
   var directive = {
-    restrict: 'C',
+    restrict: 'EA',
     scope: {
-      title: '@'
+      searchMovie: '='
     },
     replace: true,
     templateUrl: 'views/movieShow.html',
@@ -16,14 +16,14 @@ function movieSearch(){
   searchMovieController.$inject = ['$http', '$scope'];
   function searchMovieController($http, $scope){
     var vm = this;
-    var movieName = req.params.body;
     var url='http://www.omdbapi.com/?t=';
+    // var movieName = vm.movieName;
     var endUrl='&plot=short&r=json';
-    vm.getMovie = function(movieName){
-      console.log(movie search http call);
+    vm.getMovie = function(){
+      console.log("movie search http call");
       $http({
         method: 'GET',
-        url: url + movieName + endUrl
+        url: url + vm.movieName + endUrl
       }).then(function(response){
           console.log("after htpp call", response);
           vm.movie = response.data;
